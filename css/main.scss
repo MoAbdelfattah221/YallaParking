@@ -1,0 +1,268 @@
+$main_color: #F18120;
+$second_color: #fff;
+$padding: 80px;
+
+@mixin main-content {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+*{
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Work Sans', sans-serif;
+    overflow-x: hidden;
+}
+header{
+    left: 0;
+    right: 0;
+    box-shadow: -1px 2px 2px -2px grey;
+    background-color: $second_color;
+    z-index: 999;
+    .container{
+        .logo{
+            width: 150px;
+        }
+        @media (min-width: 992px) {
+            .icon{
+                display: none;
+            }
+        }
+        a{
+            font-size: 14px;
+            transition: 0.3s;
+            -webkit-transition: 0.3s;
+            -moz-transition: 0.3s;
+            -ms-transition: 0.3s;
+            -o-transition: 0.3s;
+        }
+        a:hover{
+            color: #{$main_color} !important;
+        }
+        @media (max-width: 991px) {
+            ul{
+                position: absolute;
+                flex-direction: column;
+                margin: auto !important;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.7);
+                top: 80px;
+                left: -1000px;
+                padding: 20px !important;
+                transition: 0.3s;
+                -webkit-transition: 0.3s;
+                -moz-transition: 0.3s;
+                -ms-transition: 0.3s;
+                -o-transition: 0.3s;
+                li{
+                    margin: 0 !important;
+                    margin-bottom: 10px !important;
+                    a,i{
+                        color: $second_color !important;
+                    }
+                }
+            }
+        }
+    }
+}
+.landing{
+    top: 84.25px;
+    .container-fluid{
+        height: calc(100vh - 84.25px);
+    }
+}
+.services{
+    padding-top: #{$padding + ($padding / 2)};
+    padding-bottom: #{$padding};
+    .container{
+        .box{
+            img{
+                width: 100px;
+            }
+        }
+    }
+    
+}
+.partners{
+    padding-bottom: #{$padding};
+}
+.places{
+    padding-bottom: #{$padding};
+    .box{
+        height: 330px;
+        background-position: center;
+        background-size: cover;
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+        }
+    }
+    .one{
+        background-image: url(../images/place-1.jpg)
+    }
+    .two{
+        background-image: url(../images/place-2.jpg)
+    }
+    .three{
+        background-image: url(../images/place-3.jpg)
+    }
+}
+.testimonials{
+    padding-bottom: #{$padding};
+    .container{
+        .text{
+            height: 230px; background-color: gray;
+            &::before{
+                content: "";
+                position: absolute;
+                bottom: 0;
+                border-width: 20px;
+                border-style: solid;
+                border-color: #{$second_color};
+                border-left-color: transparent;
+                border-right-color: transparent;
+                border-top-color: transparent;
+                left: 50%;
+                transform: translateX(-50%);
+                -webkit-transform: translateX(-50%);
+                -moz-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+                -o-transform: translateX(-50%);
+            }
+        }
+        .text.main{
+            background-color: #{$main_color};
+        }
+        img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+        }
+    }
+}
+.features{
+    padding-bottom: #{$padding};
+}
+.join{
+    background-image: url(../images/footer-image.jpg);
+    background-position: center;
+    background-size: cover;
+    &::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    a{
+        background-color: #{$main_color};
+
+    }
+}
+footer{
+    padding-top: #{$padding};
+    padding-bottom: #{$padding / 2};
+    img{
+        width: 100px;
+    }
+    ul{
+        li{
+            a{
+                font-size: 15px;
+                transition: 0.3s;
+                -webkit-transition: 0.3s;
+                -moz-transition: 0.3s;
+                -ms-transition: 0.3s;
+                -o-transition: 0.3s;
+                &:hover{
+                    color: #{$main_color} !important;
+                }
+            }
+            &::before{
+                content: "\f061";
+                color: var(--main-color);
+                font-weight: 900;
+                font-family: 'Font Awesome 6 Free';
+                margin-right: 10px;
+                font-size: 10px;
+            }
+        }
+    }
+    .mail{
+        color: #{$main_color};
+    }
+    .copy{
+        font-size: 11px;
+        i{
+            color: #{$main_color};
+        }
+    }
+}
+
+
+
+
+
+
+
+.main-content{
+    @include main-content;
+    p{
+        color: gray;
+    }
+}
+.chat{
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    width: 40px;
+}
+.to-top{
+    bottom: 20px;
+    left: -200px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-color: #{$main_color};
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    @media (max-width: 991px) {
+        &{
+            display: none !important;
+        }
+    }
+}
+.active{
+    left: 0 !important;
+}
+.show{
+    left: 20px !important;
+}
